@@ -27,7 +27,8 @@ export const App: React.FC = () => {
     setTimeout(() => {
       getTodos()
         .then(todos => {
-          setTodoList(todos), setFilteredTodos(todos);
+          setTodoList(todos);
+          setFilteredTodos(todos);
         })
         .finally(() => setLoader(false));
     }, 50);

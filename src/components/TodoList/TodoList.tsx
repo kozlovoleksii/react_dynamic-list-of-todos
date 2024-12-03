@@ -36,7 +36,7 @@ export const TodoList: React.FC<Props> = ({
 
       <tbody>
         {todoList.map(todo => (
-          <tr data-cy="todo" className="">
+          <tr data-cy="todo" className="" key={todo.id}>
             <td className="is-vcentered">{todo.id}</td>
             {todo.completed ? (
               <td className="is-vcentered">
@@ -65,7 +65,8 @@ export const TodoList: React.FC<Props> = ({
                 className="button"
                 type="button"
                 onClick={() => {
-                  onSelect(todo), handleToggleIcon(todo.id);
+                  onSelect(todo);
+                  handleToggleIcon(todo.id);
                 }}
               >
                 <span className="icon">

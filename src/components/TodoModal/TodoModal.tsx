@@ -18,6 +18,7 @@ export const TodoModal: React.FC<Props> = ({ todo, user, del = () => {} }) => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 300);
+
     return () => clearTimeout(timer);
   }, [todo]);
 
