@@ -24,7 +24,7 @@ export const TodoFilter: React.FC<Props> = ({
     getSearch(e.target.value);
   }
 
-  function claerSearchResult() {
+  function clearSearchResult() {
     setQuery('');
     clearSearch('');
   }
@@ -66,7 +66,7 @@ export const TodoFilter: React.FC<Props> = ({
               data-cy="clearSearchButton"
               type="button"
               className="delete"
-              onClick={claerSearchResult}
+              onClick={clearSearchResult}
             />
           )}
         </span>

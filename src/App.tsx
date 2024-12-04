@@ -24,14 +24,14 @@ export const App: React.FC = () => {
   useEffect(() => {
     setLoader(true);
 
-    setTimeout(() => {
+   
       getTodos()
         .then(todos => {
           setTodoList(todos);
           setFilteredTodos(todos);
         })
         .finally(() => setLoader(false));
-    }, 50);
+  
   }, []);
 
   useEffect(() => {
@@ -88,7 +88,7 @@ export const App: React.FC = () => {
               <TodoList
                 todoList={filteredTodos}
                 onSelect={setSelectedTodo}
-                activeTodos={activeTodos}
+                selectedTodoId={activeTodos}
                 setActiveTodos={setActiveTodos}
               />
             </div>

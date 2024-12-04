@@ -5,18 +5,18 @@ import classNames from 'classnames';
 type Props = {
   todoList: Todo[];
   onSelect?: (todo: Todo) => void;
-  activeTodos: number | null;
+  selectedTodoId: number | null;
   setActiveTodos: (value: number | null) => void;
 };
 
 export const TodoList: React.FC<Props> = ({
   todoList,
-  activeTodos,
+  selectedTodoId,
   setActiveTodos,
   onSelect = () => {},
 }) => {
   const handleToggleIcon = (todoId: number) => {
-    setActiveTodos(activeTodos === todoId ? null : todoId);
+    setActiveTodos(selectedTodoId === todoId ? null : todoId);
   };
 
   return (
@@ -70,7 +70,7 @@ export const TodoList: React.FC<Props> = ({
                 }}
               >
                 <span className="icon">
-                  {activeTodos === todo.id ? (
+                  {selectedTodoId === todo.id ? (
                     <i className="far fa-eye-slash" />
                   ) : (
                     <i className="far fa-eye" />
